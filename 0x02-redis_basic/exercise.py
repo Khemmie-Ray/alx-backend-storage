@@ -75,7 +75,7 @@ class Cache:
         self._redis.flushdb(True)
 
     @count_calls
-    def store(self, data:Union[str, bytes, int, float]) ->str:
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         '''Store a value in a Redis data sorage and returns the key.
         '''
         data_key = str(uuid.uuid4())
@@ -86,7 +86,7 @@ class Cache:
         self,
         key: str,
         fn: Callable = None,
-        ) -> Union[str, bytes, int, float]:
+          ) -> Union[str, bytes, int, float]:
         '''Retrieves a value from a Redis data storage.
         '''
         data = self._redis.get(key)
